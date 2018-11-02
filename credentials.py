@@ -4,6 +4,13 @@ class Credentials:
     """
 
     credential_list = [] # empty credential list
+ # Init method here
+    def save_credential(self):
+        '''
+        save_credential method saves credential objects into credential_list
+        '''
+
+        Credentials.credential_list.append(self)
 
     def __init__(self,user_name,phone_number,email,password):
 
