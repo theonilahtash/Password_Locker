@@ -33,17 +33,31 @@ class Credentials:
 
         Credentials.credential_list.remove(self)
 
-    @classmethod
-    def find_by_number(cls,number):
-        '''
-        method that takes in a number and returns a credential that matches that number.
+@classmethod
+def find_by_number(cls,number):
+    '''
+    method that takes in a number and returns a credential that matches that number.
 
-        Args:
-            number: phone number to search for 
-        returns:
-            Credentials of a person that matches the number.
-        '''
+    Args:
+        number: phone number to search for 
+    returns:
+        Credentials of a person that matches the number.
+    '''
 
-        for credential in cls.credential_list:
-            if credential.phone_number == number:
-                return credential      
+    for credential in cls.credential_list:
+        if credential.phone_number == number:
+            return credential 
+@classmethod
+def find_by_user_name(cls,user_name):
+    '''
+    method that takes in a user name and returns a credential that matches that user name.
+
+    Args:
+        user_name: user name to search for 
+    returns:
+        Credentials of a person that matches the user_name.
+    '''
+
+    for credential in cls.credential_list:
+        if credential.user_name == user_name:
+            return credential                   
