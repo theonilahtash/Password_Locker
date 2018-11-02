@@ -24,4 +24,26 @@ class Credentials:
         self.user_name = user_name
         self.phone_number = phone_number
         self.email = email
-        self.password = password       
+        self.password = password
+
+    def delete_credential(self):
+        '''
+        delete_credential method deletes a saved credential from the credential_list
+        '''
+
+        Credentials.credential_list.remove(self)
+
+    @classmethod
+    def find_by_number(cls,number):
+        '''
+        method that takes in a number and returns a credential that matches that number.
+
+        Args:
+            number: phone number to search for 
+        returns:
+            Credentials of a person that matches the number.
+        '''
+
+        for credential in cls.credential_list:
+            if credential.phone_number == number:
+                return credential      

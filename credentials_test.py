@@ -55,7 +55,7 @@ class TestCredential(unittest.TestCase):
         test_save_multiple_credential to check if we can save multiple credential objects to our credential_list
         '''
         self.new_credential.save_credential()
-        test_credential = Credentials("Test","user","0733445566","test@user.com","password") # new credential
+        test_credential = Credentials("Test","user","0733445566","test@user.com") # new credential
         self.assertEqual(len(Credentials.credential_list),1)
 
     def test_delete_credential(self):
@@ -63,11 +63,24 @@ class TestCredential(unittest.TestCase):
         test_delete_credential to test if we can remove a credential from our credential list
         '''
         self.new_credential.save_credential()
-        test_credential = Credentials("Test","user","0733445566","test@user.com","password") # new credential
+        test_credential = Credentials("Test","user","0733445566","test@user.com") # new credential
         test_credential.save_credential()
 
         self.new_credential.delete_credential() # Deleting a credential object
         self.assertEqual(len(Credentials.credential_list),1)
+
+    def test_find_credential_by_number(self):
+        '''
+        test to check if we can find a credential by phone number and display information
+        '''
+
+        self.new_credential.save_credential()
+        test_credential = Credentials("Test","user","0722334455","test@user.com") # new credential
+        test_credential.save_credential()
+
+        found_credential = Credentials.find_by_number("0722334455")
+
+        self.assertEqual(found_credential.email,test_credential.email)
 
 
 if __name__ == '__main__':
