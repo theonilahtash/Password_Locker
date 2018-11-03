@@ -75,11 +75,22 @@ class TestCredential(unittest.TestCase):
         '''
 
         self.new_credential.save_credential()
-        test_credential = Credentials("Facebook", "b_belvo", "b_belvo@gmail.com", "password")
+        test_credential = Credentials("b_belvo", "0722334455", "b_belvo@gmail.com", "password")
         test_credential.save_credential()
 
         found_credential = Credentials.find_by_user_name("b_belvo")
-        self.assertEqual(found_credential.email, test_credential.email)        
+        self.assertEqual(found_credential.user_name, test_credential.user_name) 
+
+def test_credential_exist(self):
+    '''
+    check if credentials exist and return a boolean
+    '''
+    self.new_credential.save_credential()
+    test_credential = Credentials("b_belvo", "0722334455", "b_belvo@gmail.com", "password") 
+
+    credential_exist = Credentials.credential_exist    
+    self.assertTrue(credentials_exist)  
+
 
 
 if __name__ == '__main__':

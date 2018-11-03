@@ -1,3 +1,6 @@
+# import pyperclip
+import random
+
 class Credentials:
     """
     Class that generates new instances of credentials
@@ -34,18 +37,11 @@ class Credentials:
         Credentials.credential_list.remove(self)
 
     @classmethod
-    def find_by_user_name(cls,name):
+    def find_by_user_name(cls, name):
         '''
-        method that takes in a name and returns a credential that matches that name.
-
-        Args:
-            name: user name to search for 
-        returns:
-            Credentials of a person that matches the name.
+        This is a method that in which user can find credentials by name search
         '''
-
-    for credential in cls.credential_list:
-        if credential.user_name == name:
-            return credential 
-
+        for credentials in cls.credential_list:
+            if credentials.user_name == name:
+                return credentials
     
