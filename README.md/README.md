@@ -19,7 +19,22 @@
     * $ sudo apt-get update
     * $ sudo apt-get install python3.6
 * Git
-* A text editor e.g. Atom or VS code (For when the user wants to edit the code )   
+* A text editor e.g. Atom or VS code (For when the user wants to edit the code ) 
+
+###  Behaviour Driven Development
+        Behaviour                |          input                  |     output                      |
+        .........................|.................................|.................................|
+        create  new credentials  |  use short code cc              |be able to create new credentails|
+        
+        Display new credentials  |  code dc                        |displays the new credentials     |
+        
+        Login implemented        |  enter code log                 |enable users to login to the site|
+        
+        Exit key implemented     |  enter code ex                  |enable the user to exit the site |            
+        
+        
+   
+   
 ## Known Bugs
   There are no known bugs affecting the website at the moment.But if the user encounters any then I will be happy to look for them and fix them
 ## Technologies Used
