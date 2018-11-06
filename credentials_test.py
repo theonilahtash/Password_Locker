@@ -1,7 +1,7 @@
 import unittest # Importing the unittest module
-from credentials import Credentials # Importing the credential class
-#import pyperclip
-#from user import User
+# import pyperclip
+from credentials import Credentials # Importing the credential class       
+import user
 
 class TestCredential(unittest.TestCase):
 
@@ -95,8 +95,75 @@ class TestCredential(unittest.TestCase):
         '''
         test method that returns a list of all the credentials saved.
         '''
+        self.new_credential.save_credential()
+        test_credential = Credentials("theonilahtash", "0733445566", "theonilahtash@gmail.com", "tash1234") 
+        test_credential.save_credential()
+        # self.assertEqual(credentials.display_credentials(), Credentials.credential_list)
 
-        self.assertEqual(credentials.display_credentials(), credentials.credentials_list)
+    # def test_copy_user_name(self):
+    #     '''
+    #     Test to confirm that we are copying user name credentials found
+    #     '''
+
+    #     self.new_credentials.save_credentials()
+    #     Credentials.copy_username("theonilahtash")
+
+    #     self.assertEqual(self.new_credentials.user_name, pyperclip.paste()) 
+# class TestUser(unittest.TestCase):
+#     def setUp(self):
+#         '''
+#         method run before each test case
+#         '''
+#         self.new_user = user("theonilahtash", "password")
+
+
+#     def tearDown(self):
+#         '''
+#         Method to give an empty array before each test for more accurate results
+#         '''
+#         User.user_list = []
+
+#     def test_user_init(self):
+#         '''
+#         method to test if our users are being instantiated correctly
+#         '''
+#         self.assertEqual(self.new_user.login_name, "theonilahtash")
+#         self.assertEqual(self.new_user.password, "password")
+
+
+
+#     def test_save_user(self):
+#         '''
+#         Method to test if users are being saved
+#         '''
+#         self.new_user.save_user()
+#         self.assertEqual(len(user.user_list), 1)
+
+
+#     def test_save_multiple_user(self):
+#         '''
+#         Method to test if multiple users ate being saved
+#         '''
+#         self.new_user.save_user()
+#         test_user = user("Winnie34", "password")
+#         test_user.save_user()
+
+#         self.assertEqual(len(user.user_list), 2)
+
+#     def test_login(self):
+#         '''
+#         method to test login credentials
+#         '''
+#         self.new_user.save_user()
+#         test_user = user("theonilahtash", "password")
+#         test_user.save_user()
+
+#         login_credentials = user.user_login("theonilahtash")
+#         self.assertEqual(login_credentials.login_name, test_user.login_name)
+
+
+
+
 
 if __name__ == '__main__':
     unittest.main()      

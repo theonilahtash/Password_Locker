@@ -4,11 +4,11 @@ class User:
     '''
     user_list = []
 
-    def __init__(self,login_email,password):
+    def __init__(self,login_name,password):
         '''
         This method defines properties for our user object
         '''
-        self.login_email = login_email
+        self.login_email = login_name
         self.password = password
 
 
@@ -25,5 +25,5 @@ class User:
         This is a method in which a user can check his/her credentials
         '''
         for User in cls.user_list:
-            if User.login_email == login:
+            if User.login_name == login:
                 return User 

@@ -8,7 +8,7 @@ class Credentials:
 
     credential_list = [] # empty credential list
  # Init method here
-    def save_credential(self):
+    def save_credentials(self):
         '''
         save_credential method saves credential objects into credential_list
         '''
@@ -57,15 +57,15 @@ class Credentials:
         return false 
     
     @classmethod
-    def credential_display(cls,name):
+    def credential_display(cls):
         '''
         method that checks if the credentials  already display on the  credential_list and return true (if exists) and false(if does not)
         '''
-        for credentials in cls.credential_list:
-            if credential.user_name == name:
-                return True
-
-        return false 
+        # for credentials in cls.credential_list:
+        #     if credential.user_name == name:
+        #         return Credentials.display_credentials()
+        return cls.credential_list
             
+   
 
     
